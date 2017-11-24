@@ -560,7 +560,7 @@ class Sanic:
             # -------------------------------------------- #
 
             try:
-                response = self.error_handler.response(request, e)
+                response = await self.error_handler.response(request, e)
                 if isawaitable(response):
                     response = await response
             except Exception as e:
